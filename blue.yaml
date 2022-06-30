@@ -1,0 +1,25 @@
+# blue.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: blue
+spec:
+  replicas: 8 
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+  selector:
+    matchLabels:
+      app: myapp-blue
+  template:
+    metadata:
+      labels: 
+        app: myapp-blue
+    spec:
+      containers:
+        - name: myapp
+          #image: bitnami/nginx:1.21.6 
+          image: bitnami/nginx:1.22.0
+  
