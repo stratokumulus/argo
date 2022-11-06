@@ -1,3 +1,5 @@
 # Argo CD test
 
-Just one deployment. Change the nginx version, and see argo cd update. 
+Use this file to test ArgoCD deployments. 
+
+Once deployed, change the nginx version, and see argo cd update. 
